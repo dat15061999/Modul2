@@ -28,41 +28,45 @@ public class MyList<E> {
         for (int i = size + 1; i > index; i--) {
             elements[i] = elements[i - 1];
         }
-        elements[index] =e;
+        elements[index] = e;
         size++;
     }
+
     public E remove(int index) {
         validateIndex(index);
         E result = (E) elements[index];
-        for (int i = index; i < size-1; i++) {
-            elements[i] = elements [i+1];
+        for (int i = index; i < size - 1; i++) {
+            elements[i] = elements[i + 1];
         }
         size--;
         return result;
     }
-    public int size() {return size;}
 
-    public Object clone () {
+    public int size() {
+        return size;
+    }
+
+    public Object clone() {
         MyList<E> result = new MyList<>(size);
         for (int i = 0; i < size; i++) {
             result.add((E) elements[i]);
         }
         return result;
     }
-//    boolean
-    public boolean contains (E o) {
-        if (o instanceof Object){
-            Object str = (Object) o;
-            for (Object element:elements) {
-                if (element.equals(str))
-                    return true;
-            }
+
+    //    boolean
+    public boolean contains(E o) {
+        Object str = (Object) o;
+        for (Object element : elements) {
+            if (element.equals(str))
+                return true;
         }
         return false;
     }
-//    indexOf
+
+    //    indexOf
     public int indexOf(E o) {
-        for (int i = 0; i < elements.length; i++) {
+        for (int i = 0; i < size; i++) {
             if (elements[i].equals(o))
                 return i;
         }

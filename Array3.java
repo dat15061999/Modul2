@@ -20,7 +20,7 @@ public class Array3 {
         System.out.println(" O vi tri : "+findMax(array));
     }
     public static int findMax(int[] arr ){
-        int Max = arr[0];
+        int Max = 0;
         int count =0;
         for (int i = 0; i < arr.length; i++) {
             if (Max < arr[i]) {
