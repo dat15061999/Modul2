@@ -9,7 +9,7 @@ public class SelectionSort extends Sort{
         for (int i = 0 ; i < arr.length-1 ; i++) {
             int max = i;
             for (int j = i +1 ; j < arr.length;j++) {
-                if (compare(max,arr[j])) {
+                if (compare(arr[j],arr[max])) {
                     max = j;
                 }
             }

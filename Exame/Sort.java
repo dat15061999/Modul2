@@ -10,13 +10,13 @@ public abstract class Sort {
         }
 
     }
-    public abstract int[] sort(int[] arr);
+    protected abstract int[] sort(int[] arr);
 
-    protected boolean compare( int num1, int num2){
+    protected static boolean compare( int num1, int num2){
         if(sortBy == ESort.ASC){
             return num1 < num2;
         }
-        return num1 >=num2;
+        return num1 >= num2;
     }
     void printSort(int[] arr){}
 

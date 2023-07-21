@@ -6,9 +6,9 @@ import static Exame.Sort.setSortBy;
 
 public class View {
     static int choose;
-//    static MerchSort merchSort = new MerchSort();
-//    static InsertionSort insertionSort = new InsertionSort();
-//    static SelectionSort selectionSort = new SelectionSort();
+    static MerchSort merchSort = new MerchSort();
+    static InsertionSort insertionSort = new InsertionSort();
+    static SelectionSort selectionSort = new SelectionSort();
     static BubbleSort bubbleSort = new BubbleSort();
 
     public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class View {
         switch (choose) {
             case 1:
                 System.out.println("Insertion sort");
-                //printInsertSort(nums);
+                insertionSort.printSort(insertionSort.sort(nums));
                 break;
             case 2:
                 System.out.println("Bubble sort");
@@ -34,20 +34,21 @@ public class View {
                 break;
             case 3:
                 System.out.println("Selection sort");
-                //printSelectionSort(nums);
+                selectionSort.printSort(selectionSort.sort(nums));
                 break;
             case 4:
                 System.out.println("Merge sort");
-                //printMergeSort(nums);
+                merchSort.printSort(merchSort.sort(nums));
                 break;
             case 5:
+                System.out.println("Quick sort");
                 System.out.println("Updating");
                 break;
             case 6:
                 System.out.println("Updating");
                 break;
         }
-        printView(nums);
+        printMenuChoose(nums);
     }
 
     private static void printMenu() {
@@ -55,17 +56,13 @@ public class View {
         System.out.println("2. Bubble sort");
         System.out.println("3. Selection sort");
         System.out.println("4. Merge sort");
-        System.out.println("5. Updating");
-        System.out.println("6. Updating");
-        System.out.println("7. Updating");
-        System.out.println("8. Updating");
-        System.out.println("9. Updating");
-        System.out.println("10. Updating");
+        System.out.println("5. Quick sort");
+        System.out.println("6. Shell sort");
         System.out.println("0. Quay lai");
     }
 
     private static void sortMenu() {
-        System.out.println("Hi");
+        System.out.println("Hi! Member");
         System.out.println("1. Tang dan");
         System.out.println("2. Giam dan");
         System.out.println("0. Tro ve");

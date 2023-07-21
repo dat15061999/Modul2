@@ -1,6 +1,7 @@
 package Exame;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class MerchSort extends Sort {
     public MerchSort() {}
@@ -9,14 +10,6 @@ public class MerchSort extends Sort {
     public int[] sort(int[] arr) {
         return mergeSortAscending(arr, 0, arr.length - 1);
     }
-//
-//    public static void main(String[] args) {
-//        int[] nums = {1, 5, 3, 2, 8, 7, 6, 4};
-//        System.out.println(Arrays.toString(mergeSortDecrease(nums, 0, nums.length - 1)));
-//    }
-//
-//
-//
     private static int[] mergeSortAscending(int[] nums, int left, int right) {
         if (left > right) {
             return new int[0];
