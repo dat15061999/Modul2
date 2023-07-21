@@ -1,32 +1,23 @@
 package Exame;
 
-public class InsertionSort extends Sort<InsertionSort>{
-    public InsertionSort() {}
-
+public class InsertionSort extends Sort{
     @Override
-    int[] ascending(int[] str) {
-        int[] max = new int [] {str.length};
-        for(int i = 0 ; i < str.length-1; i++) {
-            max[i] = str[0];
-            for (int j = i+1 ; j < str.length-1-i; j++) {
-                if (max[i]>str[j]) {
-                    int temp = max[i];
-                    max[i] = str[j];
-                    max[j] = temp;
-                }
+    public int[] sort(int[] arr) {
+        for(int i =1 ;i < arr.length ; i++ ) {
+            int key = arr[i];
+            int j = i -1;
+            while (j >= 0 && compare(arr[j],key)) {
+                arr[j+1] = arr[j];
+                j--;
             }
+            arr[j +1] = key;
         }
-        return max;
-    }
-
-    @Override
-    int[] decrease(int[] str) {
-        return super.decrease(str);
+        return arr;
     }
     @Override
     void printSort(int[] arr) {
-        for (int i = 0; i < arr.length-1;i++) {
-            System.out.println(arr[i] + " ");
+        for (int j : arr) {
+            System.out.printf(j + " ");
         }
         System.out.println();
     }

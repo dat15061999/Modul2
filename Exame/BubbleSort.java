@@ -1,41 +1,29 @@
 package Exame;
 
-public class BubbleSort extends Sort<BubbleSort>{
-    public BubbleSort() {}
+public class BubbleSort extends Sort{
 
     @Override
-    int[] ascending(int[] str) {
-        for (int i = 0; i < str.length-1;i++) {
-            for (int j = 0 ; j < str.length-1;j++) {
-                if (str[j] < str[j+1]) {
-                    int temp = str[j+1];
-                    str[j+1] = str[j];
-                    str[j] = temp;
+    public int[] sort(int[] arr) {
+        for (int i = 0; i < arr.length-1;i++) {
+            for (int j = 0 ; j < arr.length-1;j++) {
+                if (compare(arr[j+1],arr[j])) {
+                    int temp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
-        return super.ascending(str);
+        return arr;
+
     }
 
-    @Override
-    int[] decrease(int[] str) {
-        for (int i = 0; i < str.length-1;i++) {
-            for (int j = 0 ; j < str.length-1;j++) {
-                if (str[j] > str[j+1]) {
-                    int temp = str[j+1];
-                    str[j+1] = str[j];
-                    str[j] = temp;
-                }
-            }
-        }
-        return super.decrease(str);
-    }
     @Override
     void printSort(int[] arr) {
-        for (int i = 0; i < arr.length-1;i++) {
-            System.out.println(arr[i] + " ");
+        for (int j : arr) {
+            System.out.printf(j + " ");
         }
         System.out.println();
     }
+
 
 }
