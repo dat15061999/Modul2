@@ -18,12 +18,14 @@ public class BubbleSort extends Sort{
     }
 
     @Override
-    void printSort(int[] arr) {
+    protected void printSort(int[] arr) {
         for (int j : arr) {
             System.out.printf(j + " ");
         }
         System.out.println();
     }
+
+
 
 
 }

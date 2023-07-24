@@ -9,13 +9,12 @@ public class InsertionSort extends Sort{
             while (j >= 0 && compare(key,arr[j])) {
                 arr[j+1] = arr[j];
                 j--;
-            }
+           }
             arr[j +1] = key;
-        }
-        return arr;
+        }        return arr;
     }
     @Override
-    void printSort(int[] arr) {
+    protected void printSort(int[] arr) {
         for (int j : arr) {
             System.out.printf(j + " ");
         }

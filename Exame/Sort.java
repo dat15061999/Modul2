@@ -18,7 +18,7 @@ public abstract class Sort {
         }
         return num1 >= num2;
     }
-    void printSort(int[] arr){}
+    protected abstract void printSort(int[] arr);
 
 
 }

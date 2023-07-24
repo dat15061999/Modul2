@@ -20,7 +20,7 @@ public class SelectionSort extends Sort{
         return arr;
     }
     @Override
-    void printSort(int[] arr) {
+    protected void printSort(int[] arr) {
         for (int j : arr) {
             System.out.printf(j + " ");
         }

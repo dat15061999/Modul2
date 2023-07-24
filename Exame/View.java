@@ -10,6 +10,8 @@ public class View {
     static InsertionSort insertionSort = new InsertionSort();
     static SelectionSort selectionSort = new SelectionSort();
     static BubbleSort bubbleSort = new BubbleSort();
+    static QuickSort quickSort =  new QuickSort();
+    static ShellSort shellSort = new ShellSort();
 
     public static void main(String[] args) {
         System.out.println("Mang can sap xep");
@@ -42,10 +44,11 @@ public class View {
                 break;
             case 5:
                 System.out.println("Quick sort");
-                System.out.println("Updating");
+                quickSort.printSort(quickSort.sort(nums));
                 break;
             case 6:
-                System.out.println("Updating");
+                System.out.println("Shell sort");
+                shellSort.printSort(shellSort.sort(nums));
                 break;
         }
         printMenuChoose(nums);
